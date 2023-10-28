@@ -12,3 +12,4 @@ Engineering at its finest, where the finest engineers reside ;)
  - Social Score app (China)
  - Campus App like (Threads, or Twitter)
  - Air Trafic Control app that tells you wheel up wheel down time/ delays/ cancellations.
+ - Campus food pantry
