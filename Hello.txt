@@ -2,3 +2,13 @@ Hey handsome! Welcome to engineering at its finest!
 thanks.  I really appreciate it.
 Sup fool!
 Engineering at its finest, where the finest engineers reside ;)
+
+
+****IDEAS****
+
+ - Parking App(Veeva)
+ - Interactable map/3d enviornment(Honda)
+ - Washing Machine app that tells you what washer is open
+ - Social Score app (China)
+ - Campus App like (Threads, or Twitter)
+ - Air Trafic Control app that tells you wheel up wheel down time/ delays/ cancellations.
