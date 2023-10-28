@@ -13,4 +13,13 @@ Engineering at its finest, where the finest engineers reside ;)
  - Campus App like (Threads, or Twitter)
  - Air Trafic Control app that tells you wheel up wheel down time/ delays/ cancellations.
  - Community Food Pantry where you can post where you have food on the internet and other people can see.
- -  
+ - ***Create a food distributions app that connects farmers to people so that they can find food wihtout a "middle man"**
+
+
+ ****Finalized IDEA****
+
+  - Low Waste, Increased Production and Purchase of sustainably sourced food
+  - Farmers to table
+  - Online Farmers Market. 
+  - Kinda like Amazon for Farmers, where the person can contact the farmer to buy the food.
+  - Personal Use (low volume) 
