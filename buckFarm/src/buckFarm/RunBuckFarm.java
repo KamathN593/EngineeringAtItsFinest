@@ -1,5 +1,11 @@
 package buckFarm;
 
+/**
+ * Program for running and creating the Farm to Buckeye  
+ * app.
+ * @author biscu
+ *
+ */
 public class RunBuckFarm {
 	
 	/**
