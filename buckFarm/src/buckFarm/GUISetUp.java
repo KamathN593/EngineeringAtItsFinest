@@ -1,5 +1,7 @@
 package buckFarm;
 
+import java.awt.CardLayout;
+
 /**
  * Controller class for GUI
  * @author Rebekkah Mobley
@@ -25,7 +27,7 @@ public class GUISetUp {
 	 * an existing user-in this case, just user/password.
 	 */
 	public void processSignIn() {
-		//TODO: Add code to test for correct username and password
+		this.mainPanel.mainCard.next(this.mainPanel.contentPane);
 	}
 	
 	/**

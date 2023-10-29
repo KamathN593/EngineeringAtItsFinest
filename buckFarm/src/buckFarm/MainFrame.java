@@ -22,7 +22,8 @@ import javax.swing.JInternalFrame;
 public class MainFrame extends JFrame implements MainFrameI {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	public JPanel contentPane;
+	public CardLayout mainCard;
 	private GUISetUp controller;
 	private boolean business;
 
@@ -36,7 +37,8 @@ public class MainFrame extends JFrame implements MainFrameI {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new CardLayout(0, 0));
+		mainCard = new CardLayout(0,0);
+		contentPane.setLayout(mainCard);
 		
 		JPanel MainPanel = new JPanel();
 		contentPane.add(MainPanel, "name_73551973826100");
@@ -118,7 +120,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		this.controller.processSignIn();
 		
 	}
 
