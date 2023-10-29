@@ -91,13 +91,29 @@ public class MainFrame extends JFrame {
 		JLabel label = new JLabel("");
 		MainPanel.add(label);
 		
-		JPanel Screen2 = new JPanel();
-		contentPane.add(Screen2, "name_73551989553800");
-		Screen2.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		JPanel Farmer = new JPanel();
+		contentPane.add(Farmer, "name_73551989553800");
+		Farmer.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
-		JPanel Screen3 = new JPanel();
-		contentPane.add(Screen3, "name_73552004563600");
-		Screen3.setLayout(new CardLayout(0, 0));
+		JPanel Title_1 = new JPanel();
+		Farmer.add(Title_1);
+		
+		JLabel Farmer_1 = new JLabel("Farmers");
+		Farmer_1.setHorizontalAlignment(SwingConstants.CENTER);
+		Farmer_1.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
+		Title_1.add(Farmer_1);
+		
+		JPanel Shopper = new JPanel();
+		contentPane.add(Shopper, "name_73552004563600");
+		Shopper.setLayout(new CardLayout(0, 0));
+		
+		JPanel Title_1_1 = new JPanel();
+		Shopper.add(Title_1_1, "name_74498707344300");
+		
+		JLabel Farmer_1_1 = new JLabel("Shoppers");
+		Farmer_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		Farmer_1_1.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
+		Title_1_1.add(Farmer_1_1);
 	}
 
 }
