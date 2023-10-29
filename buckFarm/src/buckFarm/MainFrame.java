@@ -44,54 +44,60 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 829, 524);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
+		contentPane.setLayout(new CardLayout(0, 0));
 		
-		JPanel pageTitlePanel = new JPanel();
-		contentPane.add(pageTitlePanel);
-		pageTitlePanel.setLayout(new CardLayout(0, 0));
+		JPanel MainPanel = new JPanel();
+		contentPane.add(MainPanel, "name_73551973826100");
+		MainPanel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel Title = new JPanel();
+		MainPanel.add(Title);
 		
 		JLabel pageTitle = new JLabel("Farms to Buckeyes");
-		pageTitle.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
 		pageTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		pageTitlePanel.add(pageTitle, "name_568084855432200");
+		pageTitle.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
+		Title.add(pageTitle);
 		
-		JLabel lblNewLabel = new JLabel("");
-		pageTitlePanel.add(lblNewLabel, "name_573907829540600");
-		lblNewLabel.setLabelFor(this);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\manas\\Downloads\\brutusInCornucopia.png"));
+		JPanel menuPanel_1 = new JPanel();
+		MainPanel.add(menuPanel_1);
+		menuPanel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
-		JPanel menuPanel = new JPanel();
-		contentPane.add(menuPanel);
-		menuPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		JMenuBar menuBar_1 = new JMenuBar();
+		menuBar_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuPanel_1.add(menuBar_1);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuPanel.add(menuBar);
+		JMenuItem homeMenuItem_1 = new JMenuItem("Home");
+		homeMenuItem_1.setForeground(Color.BLACK);
+		homeMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar_1.add(homeMenuItem_1);
 		
-		JMenuItem homeMenuItem = new JMenuItem("Home");
-		homeMenuItem.setForeground(new Color(0, 0, 0));
-		homeMenuItem.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar.add(homeMenuItem);
+		JMenuItem shopperMenuItem_1 = new JMenuItem("Shopper");
+		shopperMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar_1.add(shopperMenuItem_1);
 		
-		JMenuItem shopperMenuItem = new JMenuItem("Shopper");
-		shopperMenuItem.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar.add(shopperMenuItem);
+		JMenuItem profileMenuItem_1 = new JMenuItem("Profile");
+		profileMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar_1.add(profileMenuItem_1);
 		
-		JMenuItem profileMenuItem = new JMenuItem("Profile");
-		profileMenuItem.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar.add(profileMenuItem);
+		JMenuItem farmerMenuItem_1 = new JMenuItem("Farmer");
+		farmerMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar_1.add(farmerMenuItem_1);
 		
-		JMenuItem farmerMenuItem = new JMenuItem("Farmer");
-		farmerMenuItem.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar.add(farmerMenuItem);
+		JLabel label = new JLabel("");
+		MainPanel.add(label);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel);
+		JPanel Screen2 = new JPanel();
+		contentPane.add(Screen2, "name_73551989553800");
+		Screen2.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		
+		JPanel Screen3 = new JPanel();
+		contentPane.add(Screen3, "name_73552004563600");
+		Screen3.setLayout(new CardLayout(0, 0));
 	}
 
 }
