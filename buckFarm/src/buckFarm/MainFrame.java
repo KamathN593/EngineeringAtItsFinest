@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.CardLayout;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -18,26 +19,12 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements MainFrameI {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame frame = new MainFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private GUISetUp controller;
+	private boolean business;
 
 	/**
 	 * Create the frame.
@@ -114,6 +101,32 @@ public class MainFrame extends JFrame {
 		Farmer_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		Farmer_1_1.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
 		Title_1_1.add(Farmer_1_1);
+		
+		//Add action listeners
+		homeMenuItem_1.addActionListener(this);
+		shopperMenuItem_1.addActionListener(this);
+		profileMenuItem_1.addActionListener(this);
+		farmerMenuItem_1.addActionListener(this);
+		
+		/*
+		 * Ensure the program ends on close and that the frame is visible
+		 */
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerObserver(GUISetUp observer) {
+
+		this.controller = observer;
+		
 	}
 
 }

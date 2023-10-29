@@ -26,7 +26,7 @@ public class RunBuckFarm {
 		MainFrame window = new MainFrame();
 		GUISetUp control = new GUISetUp(window);
 		
-		//TODO: Add a call to add control as an obseverer for window
+		window.registerObserver(control);
 
 	}
 
