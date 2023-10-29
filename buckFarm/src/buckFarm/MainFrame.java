@@ -36,7 +36,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 	public CardLayout mainCard;
 	private GUISetUp controller;
 	private JMenuItem homeMenu,shopperMenu,profileMenu,farmerMenu;
-	public JButton BackButton1, BackButton2;
+	private JButton BackButton1, BackButton2;
 
 	
 	
@@ -122,7 +122,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 		JPanel FarmerBackVar = new JPanel();
 		Title_1.add(FarmerBackVar);
 		
-		JButton BackButton2 = new JButton("Back");
+		BackButton2 = new JButton("Back");
 		FarmerBackVar.add(BackButton2);
 		
 		JPanel Shopper = new JPanel();
@@ -150,7 +150,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 		JPanel panel_2 = new JPanel();
 		Title_1_1.add(panel_2);
 		
-		JButton BackButton1 = new JButton("Back");
+		BackButton1 = new JButton("Back");
 		BackButton1.setVerticalAlignment(SwingConstants.BOTTOM);
 		BackButton1.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(BackButton1);
