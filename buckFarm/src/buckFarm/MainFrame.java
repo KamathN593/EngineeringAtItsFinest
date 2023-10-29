@@ -34,7 +34,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 	public JPanel contentPane;
 	public CardLayout mainCard;
 	private GUISetUp controller;
-	private boolean business;
+	private JMenuItem homeMenu,shopperMenu,profileMenu,farmerMenu;
 
 	/**
 	 * Create the frame.
@@ -50,7 +50,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 		contentPane.setLayout(mainCard);
 		
 		JPanel MainPanel = new JPanel();
-		contentPane.add(MainPanel, "name_73551973826100");
+		contentPane.add(MainPanel, "MainPanel");
 		MainPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JPanel Title = new JPanel();
@@ -61,30 +61,30 @@ public class MainFrame extends JFrame implements MainFrameI {
 		pageTitle.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
 		Title.add(pageTitle);
 		
-		JPanel menuPanel_1 = new JPanel();
-		MainPanel.add(menuPanel_1);
-		menuPanel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		JPanel menuPanel = new JPanel();
+		MainPanel.add(menuPanel);
+		menuPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
-		JMenuBar menuBar_1 = new JMenuBar();
-		menuBar_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuPanel_1.add(menuBar_1);
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuPanel.add(menuBar);
 		
-		JMenuItem homeMenuItem_1 = new JMenuItem("Home");
-		homeMenuItem_1.setForeground(Color.BLACK);
-		homeMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar_1.add(homeMenuItem_1);
+		this.homeMenu = new JMenuItem("Home");
+		homeMenu.setForeground(Color.BLACK);
+		homeMenu.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar.add(homeMenu);
 		
-		JMenuItem shopperMenuItem_1 = new JMenuItem("Shopper");
-		shopperMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar_1.add(shopperMenuItem_1);
+		shopperMenu = new JMenuItem("Shopper");
+		shopperMenu.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar.add(shopperMenu);
 		
-		JMenuItem profileMenuItem_1 = new JMenuItem("Profile");
-		profileMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar_1.add(profileMenuItem_1);
+		profileMenu = new JMenuItem("Profile");
+		profileMenu.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar.add(profileMenu);
 		
-		JMenuItem farmerMenuItem_1 = new JMenuItem("Farmer");
-		farmerMenuItem_1.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
-		menuBar_1.add(farmerMenuItem_1);
+		farmerMenu = new JMenuItem("Farmer");
+		farmerMenu.setFont(new Font("Freestyle Script", Font.PLAIN, 30));
+		menuBar.add(farmerMenu);
 		
 		JTextArea txtrWelcome = new JTextArea();
 		txtrWelcome.setFont(new Font("Freestyle Script", Font.PLAIN, 25));
@@ -92,7 +92,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 		MainPanel.add(txtrWelcome);
 		
 		JPanel Farmer = new JPanel();
-		contentPane.add(Farmer, "name_73551989553800");
+		contentPane.add(Farmer, "Farmer");
 		Farmer.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JPanel Title_1 = new JPanel();
@@ -117,7 +117,7 @@ public class MainFrame extends JFrame implements MainFrameI {
 		Title_1.add(panel);
 		
 		JPanel Shopper = new JPanel();
-		contentPane.add(Shopper, "name_73552004563600");
+		contentPane.add(Shopper, "Shopper");
 		Shopper.setLayout(new CardLayout(0, 0));
 		
 		JPanel Title_1_1 = new JPanel();
@@ -137,31 +137,30 @@ public class MainFrame extends JFrame implements MainFrameI {
 		
 		JButton ShoppersCrAccBtn = new JButton("Create Account");
 		panel_3.add(ShoppersCrAccBtn);
-		ShoppersCrAccBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		
 		JPanel panel_2 = new JPanel();
 		Title_1_1.add(panel_2);
 		
 		JPanel ShopperLoginPanel = new JPanel();
-		contentPane.add(ShopperLoginPanel, "name_84376621403200");
+		contentPane.add(ShopperLoginPanel, "ShopperLogin");
 		
 		JPanel ShopperNewUserPanel = new JPanel();
-		contentPane.add(ShopperNewUserPanel, "name_84385803057700");
+		contentPane.add(ShopperNewUserPanel, "ShopNew");
 		
 		JPanel FarmerLoginPanel = new JPanel();
-		contentPane.add(FarmerLoginPanel, "name_84387444869900");
+		contentPane.add(FarmerLoginPanel, "FarmLogin");
 		
 		JPanel FarmerNewUserPanel = new JPanel();
-		contentPane.add(FarmerNewUserPanel, "name_84438364935500");
+		contentPane.add(FarmerNewUserPanel, "FarmNew");
 		
 		//Add action listeners
-		homeMenuItem_1.addActionListener(this);
-		shopperMenuItem_1.addActionListener(this);
-		profileMenuItem_1.addActionListener(this);
-		farmerMenuItem_1.addActionListener(this);
+		homeMenu.addActionListener(this);
+		shopperMenu.addActionListener(this);
+		profileMenu.addActionListener(this);
+		farmerMenu.addActionListener(this);
+		ShoppersCrAccBtn.addActionListener(this);
+		ShoppersLoginBtn.addActionListener(this);
+		FarmersCrAccBtn.addActionListener(this);
 		
 		/*
 		 * Ensure the program ends on close and that the frame is visible
@@ -174,7 +173,14 @@ public class MainFrame extends JFrame implements MainFrameI {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
+		Object source = e.getSource();
+		if(source == this.homeMenu) {
+			this.controller.processHome();
+		} else if (source == this.farmerMenu) {
+			this.controller.processFarmer();
+		} else if (source == this.shopperMenu) {
+			this.controller.processShopper();
+		}
 	}
 
 	@Override
