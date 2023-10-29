@@ -27,6 +27,7 @@ import com.jgoodies.forms.layout.RowSpec;
 import java.awt.event.ActionListener;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextArea;
+import javax.swing.JSplitPane;
 
 public class MainFrame extends JFrame implements MainFrameI {
 
@@ -35,6 +36,11 @@ public class MainFrame extends JFrame implements MainFrameI {
 	public CardLayout mainCard;
 	private GUISetUp controller;
 	private JMenuItem homeMenu,shopperMenu,profileMenu,farmerMenu;
+	public JButton BackButton1, BackButton2;
+
+	
+	
+
 
 	/**
 	 * Create the frame.
@@ -104,17 +110,20 @@ public class MainFrame extends JFrame implements MainFrameI {
 		Farmer_1.setFont(new Font("Freestyle Script", Font.PLAIN, 52));
 		Title_1.add(Farmer_1);
 		
-		JPanel panel_1 = new JPanel();
-		Title_1.add(panel_1);
+		JPanel FarmerVar = new JPanel();
+		Title_1.add(FarmerVar);
 		
 		JButton FarmerLoginBtn = new JButton("Login");
-		panel_1.add(FarmerLoginBtn);
+		FarmerVar.add(FarmerLoginBtn);
 		
 		JButton FarmersCrAccBtn = new JButton("Create Account");
-		panel_1.add(FarmersCrAccBtn);
+		FarmerVar.add(FarmersCrAccBtn);
 		
-		JPanel panel = new JPanel();
-		Title_1.add(panel);
+		JPanel FarmerBackVar = new JPanel();
+		Title_1.add(FarmerBackVar);
+		
+		JButton BackButton2 = new JButton("Back");
+		FarmerBackVar.add(BackButton2);
 		
 		JPanel Shopper = new JPanel();
 		contentPane.add(Shopper, "Shopper");
@@ -141,6 +150,11 @@ public class MainFrame extends JFrame implements MainFrameI {
 		JPanel panel_2 = new JPanel();
 		Title_1_1.add(panel_2);
 		
+		JButton BackButton1 = new JButton("Back");
+		BackButton1.setVerticalAlignment(SwingConstants.BOTTOM);
+		BackButton1.setHorizontalAlignment(SwingConstants.LEFT);
+		panel_2.add(BackButton1);
+		
 		JPanel ShopperLoginPanel = new JPanel();
 		contentPane.add(ShopperLoginPanel, "ShopperLogin");
 		
@@ -158,9 +172,15 @@ public class MainFrame extends JFrame implements MainFrameI {
 		shopperMenu.addActionListener(this);
 		profileMenu.addActionListener(this);
 		farmerMenu.addActionListener(this);
+		BackButton1.addActionListener(this);
+		BackButton2.addActionListener(this);
+		
+
+		
 		ShoppersCrAccBtn.addActionListener(this);
 		ShoppersLoginBtn.addActionListener(this);
 		FarmersCrAccBtn.addActionListener(this);
+
 		
 		/*
 		 * Ensure the program ends on close and that the frame is visible
@@ -180,6 +200,10 @@ public class MainFrame extends JFrame implements MainFrameI {
 			this.controller.processFarmer();
 		} else if (source == this.shopperMenu) {
 			this.controller.processShopper();
+		} else if (source == this.BackButton1) {
+			this.controller.processHome();
+		} else if (source == this.BackButton2) {
+			this.controller.processHome();
 		}
 	}
 
